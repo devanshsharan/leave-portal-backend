@@ -15,7 +15,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .allowedOrigins("http://localhost:5173")
+                        .allowedOrigins("https://leave-portal-backend-1.onrender.com")
                         .allowCredentials(true);
             }
         };

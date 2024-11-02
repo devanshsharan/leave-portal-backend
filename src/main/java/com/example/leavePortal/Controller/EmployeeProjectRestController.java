@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
-@CrossOrigin(origins = "https://leave-portal-frontend.onrender.com")
+@CrossOrigin(origins = "http://localhost:5173")
 @AllArgsConstructor
 public class EmployeeProjectRestController {
 

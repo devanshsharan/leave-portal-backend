@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://leave-portal-backend-1.onrender.com")
+@CrossOrigin(origins = "https://leave-portal-frontend.onrender.com")
 @Slf4j
 @AllArgsConstructor
 public class LeaveRestController {

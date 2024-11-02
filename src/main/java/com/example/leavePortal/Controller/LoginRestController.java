@@ -22,7 +22,7 @@ import java.util.Arrays;
 
 @RestController
 @Slf4j
-@CrossOrigin(origins = "https://leave-portal-backend-1.onrender.com")
+@CrossOrigin(origins = "https://leave-portal-frontend.onrender.com")
 @AllArgsConstructor
 public class LoginRestController {
 

@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://leave-portal-frontend.onrender.com")
 @AllArgsConstructor
 public class EmployeeProjectRestController {
 
@@ -39,7 +39,8 @@ public class EmployeeProjectRestController {
     }
 
     @PostMapping("/createProjectEmployeeRoles")
-    public ResponseEntity<ProjectEmployeeRole> createProjectEmployeeRole(@RequestBody ProjectEmployeeRole projectEmployeeRole) {
+    public ResponseEntity<ProjectEmployeeRole> createProjectEmployeeRole(
+            @RequestBody ProjectEmployeeRole projectEmployeeRole) {
         ProjectEmployeeRole savedRole = dataService.saveProjectEmployeeRole(projectEmployeeRole);
         return ResponseEntity.ok(savedRole);
     }

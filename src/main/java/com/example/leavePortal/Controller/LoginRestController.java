@@ -22,7 +22,7 @@ import java.util.Arrays;
 
 @RestController
 @Slf4j
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://leave-portal-frontend.onrender.com")
 @AllArgsConstructor
 public class LoginRestController {
 
@@ -30,13 +30,12 @@ public class LoginRestController {
 
     private final JwtService jwtService;
 
-
-
     @PostMapping("/login")
-    public ResponseEntity<AuthenticationResponseDto> login(@RequestBody UserDto userDto, HttpServletResponse response) throws Exception {
-        //System.out.println("first" + userDto);
+    public ResponseEntity<AuthenticationResponseDto> login(@RequestBody UserDto userDto, HttpServletResponse response)
+            throws Exception {
+        // System.out.println("first" + userDto);
         String password = AESUtil.decrypt(userDto.getPassword());
-        //System.out.println("second"+password);
+        // System.out.println("second"+password);
         userDto.setPassword(password);
         AuthenticationResponseDto authResponse = loginService.login(userDto);
 
@@ -60,7 +59,7 @@ public class LoginRestController {
                     .map(Cookie::getValue)
                     .findFirst()
                     .orElse(null);
-            log.info("omg2 "+refreshToken);
+            log.info("omg2 " + refreshToken);
             if (refreshToken != null) {
                 AuthenticationResponseDto response = loginService.refreshWithCookie(refreshToken);
                 if (response.getJwt() != null) {
